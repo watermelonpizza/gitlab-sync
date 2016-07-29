@@ -1,0 +1,8 @@
+stages:
+  - gitsync
+
+github sync:
+  stage: gitsync
+  image: watermelonpizza/git
+  script:
+    - git push --mirror https://$GITHUB_TOKEN@github.com/$GIT_REPO.git
